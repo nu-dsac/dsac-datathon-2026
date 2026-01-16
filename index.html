@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datathon OS</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for that premium OS feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="desktop">
+        <!-- Desktop Icons will be generated or placed here -->
+        <div class="desktop-icon" data-app="overview" style="top: 20px; left: 20px;">
+            <div class="icon-img">📄</div>
+            <span class="icon-label">Overview</span>
+        </div>
+        <div class="desktop-icon" data-app="schedule" style="top: 120px; left: 20px;">
+            <div class="icon-img">📅</div>
+            <span class="icon-label">Schedule</span>
+        </div>
+        <div class="desktop-icon" data-app="problem" style="top: 220px; left: 20px;">
+            <div class="icon-img">📜</div>
+            <span class="icon-label">Problem</span>
+        </div>
+        <div class="desktop-icon" data-app="dataset" style="top: 320px; left: 20px;">
+            <div class="icon-img">💾</div>
+            <span class="icon-label">Dataset</span>
+        </div>
+        <div class="desktop-icon" data-app="submission" style="top: 420px; left: 20px;">
+            <div class="icon-img">📤</div>
+            <span class="icon-label">Submit</span>
+        </div>
+        <div class="desktop-icon" data-app="faq" style="top: 520px; left: 20px;">
+            <div class="icon-img">❓</div>
+            <span class="icon-label">FAQ</span>
+        </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+
+        <div id="dsac-logo-container">
+            <img src="dsaclogo.png" alt="DSAC Logo" class="dsac-logo">
+            <span class="dsac-text">Datathon 2026</span>
+        </div>
+        <div id="taskbar-apps">
+            <!-- Open apps appear here -->
+        </div>
+        <div id="taskbar-tray">
+            <div id="clock">12:00 PM</div>
+        </div>
+    </div>
+
+    <!-- App Contents (Hidden by default, cloned into windows) -->
+    <template id="app-overview">
+        <div class="app-content-inner">
+            <h1>Datathon 2026</h1>
+            <p class="subtitle">Welcome to DSAC's first datathon!</p>
+            <hr>
+            <h2>Mission</h2>
+            <p>Your goal is to analyze the provided dataset and uncover hidden patterns. Be creative and have fun!
+            </p>
+            <h2>Awards</h2>
+            <ul>
+                <li>🥇 1st Place *</li>
+                <li>🥈 2nd Place</li>
+                <li>🥉 3rd Place</li>
+            </ul>
+            <h2>Special Awards</h2>
+            <ul>
+                <li>🏅 Best Technical Execution</li>
+                <li>🏅 Best Data Visualization</li>
+                <li>🏅 Best Creativity</li>
+                <li>🏅 Best Rookie Team</li>
+            </ul>
+            <p style="font-size: 0.8em; color: #8b949e; margin-top: 20px; font-style: italic;">
+                * Special Reward: AYCE meal at Sushi Taku, Happy Lamb Hotpot, or Iron Age KBBQ
+            </p>
+        </div>
+    </template>
+
+    <template id="app-schedule">
+        <div class="app-content-inner">
+            <h2>Projected Schedule</h2>
+            <div class="schedule-item">
+                <span class="time">09:00 AM</span>
+                <span class="event">Breakfast</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">10:00 AM</span>
+                <span class="event">Dataset Released</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">12:00 PM</span>
+                <span class="event">Lunch Break & Networking</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">01:00 PM</span>
+                <span class="event">Resume Datathon</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">03:30 PM</span>
+                <span class="event">Submission Deadline</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">04:00 PM</span>
+                <span class="event">Judging Begins</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">05:30 PM</span>
+                <span class="event">Judging Ends / Awards Ceremony</span>
+            </div>
+        </div>
+    </template>
+
+    <template id="app-faq">
+        <div class="app-content-inner">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>What is the team size?</summary>
+                <p>Ideally, teams should be 2-4 people; however, you are allowed to work individually, if preferred.</p>
+            </details>
+            <details>
+                <summary>Can I use external datasets/information?</summary>
+                <p>Yes, as long as they are public and <strong>cited</strong>.</p>
+            </details>
+            <details>
+                <summary>What are we being judged on?</summary>
+                <p>We will be judging based on the following criteria:
+                <ul>
+                    <li>Technical Skill and Data Handling</li>
+                    <li>Modeling and Exploration</li>
+                    <li>Reasoning and Evidence</li>
+                    <li>Visual Modeling and Communication</li>
+                    <li>Impact and Creativity</li>
+                </ul>
+                </p>
+            </details>
+            <details>
+                <summary>Is there food?</summary>
+                <p>Yes! Breakfast and lunch will be provided.</p>
+            </details>
+            <details>
+                <summary>What if I have questions?</summary>
+                <p>Ask us! We will be around to help.</p>
+            </details>
+        </div>
+    </template>
+    <template id="app-dataset">
+        <div class="app-content-inner"
+            style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <div class="lock-screen" id="dataset-lock-screen">
+                <p>Status: <span id="dataset-status" style="color: #ff5f56;">LOCKED 🔒</span></p>
+                <p>Enter the password to access the dataset.</p>
+
+                <div class="form-group" style="max-width: 300px; margin: 20px auto;">
+                    <input type="password" id="dataset-password" class="os-input" placeholder="Enter Password">
+                    <button id="unlock-btn" class="os-btn primary" style="margin-top: 10px;">Unlock</button>
+                    <p id="password-error" style="color: #ff5f56; display: none; margin-top: 10px;">Incorrect Password
+                    </p>
+                </div>
+            </div>
+
+            <div id="dataset-download-area" style="display: none; text-align: center;">
+                <p>Status: <span style="color: #27c93f;">UNLOCKED 🔓</span></p>
+                <p>You can now download the dataset.</p>
+                <a href="https://drive.google.com/drive/folders/1QRyMDUFKVZNsbazPs5FCm7NX9hP3MBfR?usp=sharing"
+                    target="_blank" class="os-btn primary" style="text-decoration: none; display: inline-block;">
+                    Open Dataset Folder (Google Drive)
+                </a>
+            </div>
+        </div>
+    </template>
+
+    <template id="app-submission">
+        <div class="app-content-inner"
+            style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <p>Ready to submit your project?</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7Clkq_BQHGTKU2Nhh2bJr1AzbJJclcQ1YhnSaTNrC5jl3bA/viewform?usp=publish-editor"
+                target="_blank" class="os-btn primary" style="text-decoration: none; display: inline-block;">
+                Open Submission Form
+            </a>
+        </div>
+    </template>
+
+    <template id="app-problem">
+        <div class="app-content-inner" style="padding: 0; height: 100%; overflow: hidden;">
+            <iframe src="Datathon_Problem_Statement.pdf#navpanes=0&zoom=100"
+                style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+    </template>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
